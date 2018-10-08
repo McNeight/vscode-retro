@@ -1,0 +1,88 @@
+{
+    "fileTypes": [
+        "rx"
+    ],
+    "keyEquivalent": "^~F",
+    "name": "Retro",
+    "patterns": [
+        {
+            "match": "(?i:(?<=^|\\s)(TRUE|FALSE|BL|PI|CELL|C\/L|R\/O|W\/O|R\/W)(?=\\s))",
+            "name": "constant.language.retro"
+        },
+        {
+            "match": "(?<=^|\\s)([$#%]?[-+]?[0-9]+(\\.[0-9]*e(-?[0-9]+)|\\.?[0-9a-fA-F]*))(?=\\s)",
+            "name": "constant.numeric.retro"
+        },
+        {
+            "match": "(?<=^|\\s)(([&^]\\S)|((\"|')\\S(\"|')))(?=\\s)",
+            "name": "constant.character.retro"
+        },
+        {
+            "comment": "ANSI line comment",
+            "match": "(?<=^|\\s)(\\\\ .*$)",
+            "name": "comment.line.backslash.retro"
+        },
+        {
+            "begin": "(?<=^|\\s)(\\(\\*)(?=\\s)",
+            "comment": "multiline comments for iForth",
+            "end": "(?<=^|\\s)(\\*\\))(?=\\s)",
+            "name": "comment.block.retro"
+        },
+        {
+            "begin": "\\b(?i:DOC){",
+            "comment": "documentation comments for Retro",
+            "end": "}(?i:DOC)\\b",
+            "name": "comment.block.documentation.retro"
+        },
+        {
+            "comment": "ANSI line comment",
+            "match": "(?<=^|\\s)(\\.?\\( [^)]*\\))",
+            "name": "comment.line.parentheses.retro"
+        },
+        {
+            "comment": "",
+            "match": "(?i:((?<=ABORT\" )|(?<=BREAK\" )|(?<=\\.\" )|(C\" )|(S\\\\?\" )))[^\"]+\"",
+            "name": "string.quoted.double.retro"
+        },
+        {
+            "comment": "",
+            "match": "(?i:((?<=INCLUDE)|(?<=NEEDS)|(?<=REQUIRE)|(?<=USE)))[ ]\\S+(?=\\s)",
+            "name": "string.unquoted.retro"
+        },
+        {
+            "match": "(?<=^|\\s)\\[(?i:(\\?DO|\\+LOOP|AGAIN|BEGIN|DO|ELSE|ENDIF|FOR|IF|IFDEF|IFUNDEF|LOOP|NEXT|REPEAT|THEN|UNTIL|WHILE))\\](?=\\s)",
+            "name": "keyword.control.immediate.retro"
+        },
+        {
+            "match": "(?<=^|\\s)(?i:(COMPILE-ONLY|IMMEDIATE|IS|RESTRICT|TO|WHAT'S))(?=\\s)",
+            "name": "keyword.other.immediate.retro"
+        },
+        {
+            "match": "(?<=^|\\s)(?i:(-DO|\\-LOOP|\\?DO|\\?LEAVE|\\+DO|\\+LOOP|ABORT\\\"|AGAIN|AHEAD|BEGIN|CASE|DO|ELSE|ENDCASE|ENDIF|ENDOF|ENDTRY\\-IFERROR|ENDTRY|FOR|IF|IFERROR|LEAVE|LOOP|NEXT|RECOVER|REPEAT|RESTORE|THEN|TRY|U\\-DO|U\\+DO|UNTIL|WHILE))(?=\\s)",
+            "name": "keyword.control.compile-only.retro"
+        },
+        {
+            "match": "(?<=^|\\s)(?i:(\\?DUP-0=-IF|\\?DUP-IF|\\)|\\['\\]|\\[CHAR\\]|\\[COMPILE\\]|\\[IS\\]|\\[TO\\]|<COMPILATION|<INTERPRETATION|ASSERT\\(|ASSERT0\\(|ASSERT1\\(|ASSERT2\\(|ASSERT3\\(|COMPILATION>|DEFERS|DOES>|INTERPRETATION>|OF|POSTPONE))(?=\\s)",
+            "name": "keyword.other.compile-only.retro"
+        },
+        {
+            "match": "(?<=^|\\s)(?i:('|<IS>|<TO>|CHAR|END-STRUCT|INCLUDE[D]?|LOAD|NEEDS|REQUIRE[D]?|REVISION|SEE|STRUCT|THRU|USE))(?=\\s)",
+            "name": "keyword.other.non-immediate.retro"
+        },
+        {
+            "match": "(?<=^|\\s)(?i:(~~|BREAK:|BREAK\"|DBG))(?=\\s)",
+            "name": "keyword.other.warning.retro"
+        },
+        {
+            "match": "\\b(?i:I|J|K)\\b",
+            "name": "variable.language.retro"
+        },
+        {
+            "comment": "",
+            "match": "(?<=^|\\s)(?i:(2CONSTANT|2VARIABLE|ALIAS|CONSTANT|CREATE-INTERPRET\/COMPILE[:]?|CREATE|DEFER|FCONSTANT|FIELD|FVARIABLE|USER|VALUE|VARIABLE|VOCABULARY))(?=\\s)",
+            "name": "storage.type.retro"
+        }
+    ],
+    "scopeName": "source.retro",
+    "uuid": "0AAA4CFD-D621-4B33-BB76-E5D9EDE64E84"
+}

@@ -1,0 +1,35 @@
+{
+    "name": "vscode-retro",
+    "displayName": "Retro",
+    "description": "Retro extension for VS Code",
+    "version": "11.6.1",
+    "publisher": "mcneight",
+    "engines": {
+        "vscode": "^1.28.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "retro",
+                "aliases": [
+                    "Retro",
+                    "retro"
+                ],
+                "extensions": [
+                    ".rx"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "retro",
+                "scopeName": "source.retro",
+                "path": "./syntaxes/retro.tmLanguage.json"
+            }
+        ]
+    }
+}
